@@ -7,13 +7,16 @@ import { PerfilEditionComponent } from './perfil-edition/perfil-edition.componen
 import { PerfilRemoveComponent } from './perfil-remove/perfil-remove.component';
 import { PerfilListComponent } from './perfil-list/perfil-list.component';
 import { RegisterComponent } from './register/register.component';
+import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 
 
 @NgModule({
   declarations: [PerfilCreationComponent, PerfilEditionComponent, PerfilRemoveComponent, PerfilListComponent, RegisterComponent],
   imports: [
     CommonModule,
-    PerfilRoutingModule
+    PerfilRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class PerfilModule { }
