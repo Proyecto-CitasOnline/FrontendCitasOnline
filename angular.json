@@ -24,9 +24,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/materialize-css/dist/css/materialize.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/materialize-css/dist/js/materialize.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -119,6 +122,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "CitasOnlineNG"
+    }
+  },
+  "defaultProject": "CitasOnlineNG",
+  "cli": {
+    "analytics": "746eb471-f673-4505-a10d-0646705a2307"
+  }
 }
