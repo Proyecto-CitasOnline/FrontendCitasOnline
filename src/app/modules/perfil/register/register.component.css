@@ -30,3 +30,6 @@
    right: -20px;
  }
  
+ .warning-validator strong {
+   color: red;
+ }
