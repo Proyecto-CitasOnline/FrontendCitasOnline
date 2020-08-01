@@ -1,8 +1,10 @@
 export class UserModel{
     id?= String;
-    email:String;
-    contrasena?:String;
+    correo:String;
+    password?:String;
     fechaNacimiento:String;
     perfilId?:String;
     rol?:Number;
+    token?: String;
+    isLogged: Boolean=false;
 }

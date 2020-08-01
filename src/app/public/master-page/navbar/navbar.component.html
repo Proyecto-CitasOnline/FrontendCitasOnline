@@ -5,8 +5,11 @@
         <li><a routerLink="">¿Cómo funciona?</a></li>
         <li><a routerLink="">Gente cerca</a></li>
         <li><a routerLink="">Testimonios</a></li>
-        <li><a routerLink="perfil/register">Registrate</a></li>
-        <li><a routerLink="security/login">Conéctate</a></li>
+        <li *ngIf="!isLogged"><a routerLink="perfil/register">Registrate</a></li>
+        <li *ngIf="!isLogged"><a routerLink="security/login">Conéctate</a></li>
+        <li *ngIf="isLogged"><a routerLink="security/change-password"> Cambiar Contraseña</a></li>
+        <li *ngIf="isLogged"><a routerLink="security/logout">Cerrar Sesion</a></li>
+
       </ul>
     </div>
   </nav>
