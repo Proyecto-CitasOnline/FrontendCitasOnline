@@ -53,7 +53,7 @@ export class RegisterComponent implements OnInit {
 
   PerfilRegisterFn() {
     if (this.fgValidator.invalid) {
-      showMessage("Invalid form..");
+      showMessage("Revise la información suministrada. Formatos inválidos.");
       console.log(this.fgValidator)
     } else {
       //showMessage("Registering..");
@@ -61,13 +61,11 @@ export class RegisterComponent implements OnInit {
       let model = this.getPerfilData();
       this.service.PerfilRegistering(model).subscribe(
         data => {
-          showMessage("Register Succesfully, you can find you password in your email inbox  ");
+          showMessage("Registro completado con éxito, puede encontrar su contraseña en la bandeja de entrada de su correo electrónico.");
           this.router.navigate(['/security/login']);
         },
         error => {
-          console.log(error)
-          console.log(model)
-          showMessage("Error Registering...");
+          showMessage("Error de registro.");
         }
       );
     }
@@ -87,8 +85,8 @@ export class RegisterComponent implements OnInit {
     //model.nivelEscolaridad = this.fgv.nivelEscolaridad.value;
     //model.ocupacion = this.fgv.ocupacion.value;
     model.sexo = this.fgv.sexo.value;
-    model.phone = this.fgv.phone.value;
-    model.orientacionSexual="Hombres";
+    model.phone = this.fgv. phone.value;
+    model.orientacionSexual= this.fgv.orientacionSexual.value;
     return model;
   }
 

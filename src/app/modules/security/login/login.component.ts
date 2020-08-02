@@ -1,9 +1,10 @@
+import { MD5 } from 'crypto-js/md5';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserModel } from 'src/app/models/user.model';
 import {SecurityService} from '../../../services/security.service';
-import MD5 from 'crypto-js/md5';
+
 
 declare const showMessage: any;
 
@@ -41,7 +42,7 @@ export class LoginComponent implements OnInit {
  */
   LoginPerfilFn() {
     if (this.fgValidator.invalid) {
-      showMessage("Invalid form..");
+      showMessage("Revise la información suministrada. Formatos inválidos.");
       console.log(this.fgValidator)
     } else {
       //showMessage("Registering..");
@@ -51,13 +52,11 @@ export class LoginComponent implements OnInit {
       this.service.PerfilLogin(model).subscribe(
         data => {
           this.service.saveSessionData(data);
-          showMessage("Welcome to your account");
+          showMessage("Bienvenido a Matching");
           this.router.navigate(['/home']);
         },
         error => {
-          console.log(error)
-          console.log(model)
-          showMessage("Invalid data.");
+          showMessage("Datos inválidos.");
         }
       );
     }

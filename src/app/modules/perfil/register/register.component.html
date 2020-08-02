@@ -13,11 +13,11 @@
                 <input id="nombre" formControlName ="nombre" type="text" >
               <label for="nombre">Nombre</label>
               <div class="warning-validator" *ngIf="fgv.nombre.errors && (fgv.nombre.dirty || fgv.nombre.touched)">
-                <strong *ngIf="fgv.nombre.errors?.required">
-                  this field is required.
+                <strong *ngIf="fgv.nombre.errors.required">
+                  Este campo es requerido.
                 </strong>
                 <strong *ngIf="fgv.nombre.errors.minlength">
-                  this field must be at least {{nombreMinLength}} long.
+                  Este campo debe tener al menos  {{nombreMinLength}} caracteres.
                 </strong>
 
               </div>  
@@ -28,10 +28,10 @@
                 <label for="correo">Correo electrónico</label>
                 <div class="warning-validator" *ngIf="fgv.correo.errors   && (fgv.correo.dirty || fgv.correo.touched)">
                   <strong *ngIf="fgv.correo.errors.required">
-                    this field is required.
+                    Este campo es requerido.
                   </strong>
                   <strong *ngIf="fgv.correo.errors.email ">
-                    this field must be a correct correo format.
+                    Este campo debe tener un formato de correo electrónico correcto.
                   </strong>
                 </div>  
               </div>
@@ -43,42 +43,33 @@
                 <label for="phone">Telefóno</label>
                 <div class="warning-validator" *ngIf="fgv.phone.errors   && (fgv.phone.dirty || fgv.phone.touched)">
                   <strong *ngIf="fgv.phone.errors.required">
-                    this field is required.
+                    Este campo es requerido.
                   </strong>
                   <strong *ngIf="fgv.phone.errors.minlength">
-                    this field must be at least 12 long.
+                    Este campo debe tener al menos  {{telefonoMinLength}} caracteres.
                   </strong>
                   <strong *ngIf="fgv.phone.errors.maxlength">
-                    this field must be at least 14 long.
+                    Este campo debe tener máximo {{telefonoMaxLength}}  caracteres.
                   </strong>
   
   
                 </div>  
               </div>
-              <div class="input-field col s6">
-                <i class="material-icons prefix">wc</i>
-                <input id="orientacionSexual" formControlName ="orientacionSexual" type="text" >
-                <label for="orientacionSexual">orientacion Sexual</label>
-                <div class="warning-validator" *ngIf="fgv.orientacionSexual.errors   && (fgv.sexo.dirty || fgv.sexo.touched)">
-                  <strong *ngIf="fgv.orientacionSexualerrors.required">
-                    this field is required.
-                  </strong>
-                </div>
-              </div>
+              
               
             <div class="input-field col s6">
                 <i class="material-icons prefix">wc</i>
                 <input id="sexo" formControlName ="sexo" type="text" >
-                <label for="sexo">Sexo</label>
+                <label for="sexo">Sexo (H-M) </label>
                 <div class="warning-validator" *ngIf="fgv.sexo.errors   && (fgv.sexo.dirty || fgv.sexo.touched)">
                   <strong *ngIf="fgv.sexo.errors.required">
-                    this field is required.
-                  </strong>
+                    Este campo es requerido.
+                  </strong> 
                   <strong *ngIf="fgv.sexo.errors.minlength">
-                    this field must be min 8 long.
+                    Este campo debe tener al menos  {{sexoMinLength}} caracteres.
                   </strong>
                   <strong *ngIf="fgv.sexo.errors.maxlength">
-                    this field must be max 9 long.
+                    Este campo debe tener máximo  {{sexoMaxLength}} caracteres.
                   </strong>
   
   
@@ -91,6 +82,11 @@
                     <i class="material-icons prefix">date_range</i> 
                   <input id="fechaNacimiento" formControlName ="fechaNacimiento" type="text" >
                     <label for="fechaNacimiento">Fecha de nacimiento</label>
+                    <div class="warning-validator" *ngIf="fgv.fechaNacimiento.errors   && (fgv.fechaNacimiento.dirty || fgv.fechaNacimiento.touched)">
+                      <strong *ngIf="fgv.fechaNacimiento.errors.required">
+                        Este campo es requerido.
+                      </strong> 
+                    </div>
                 </div>
                 <div class="input-field col s6">
                     <i class="material-icons prefix"> library_books</i>
@@ -104,15 +100,25 @@
             <div class="input-field col s6">
                 <i class="material-icons prefix">favorite_border </i>
                 <input id="estadoCivil" formControlName ="estadoCivil" type="text" >
-                <label for="estadoCivil">Estado estadoCivil</label>
+                <label for="estadoCivil">Estado civil</label>
                 <div class="warning-validator" *ngIf="fgv.estadoCivil.errors   && (fgv.estadoCivil.dirty || fgv.estadoCivil.touched)">
                   <strong *ngIf="fgv.estadoCivil.errors.required">
-                    this field is required.
+                    Este campo es requerido.
                   </strong>
                   <strong *ngIf="fgv.estadoCivil.errors.minlength">
-                    this field must be at least 4 long.
+                    Este campo debe tener al menos {{civilMinLength}} caracteres.
                   </strong>
                 </div>  
+              </div>
+              <div class="input-field col s6">
+                <i class="material-icons prefix">wc</i>
+                <input id="orientacionSexual" formControlName ="orientacionSexual" type="text" >
+                <label for="orientacionSexual">Orientacion sexual</label>
+                <div class="warning-validator" *ngIf="fgv.orientacionSexual.errors   && (fgv.orientacionSexual.dirty || fgv.orientacionSexual.touched)">
+                  <strong *ngIf="fgv.orientacionSexual.errors.required">
+                    Este campo es requerido.
+                  </strong>
+                </div>
               </div>
   
               <div class="input-field col s6">

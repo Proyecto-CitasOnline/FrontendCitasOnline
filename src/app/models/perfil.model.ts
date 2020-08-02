@@ -14,6 +14,6 @@ export class PerfilModel{
     hijos?:Boolean;
     fumador?:Boolean;
     bebedor?:Boolean;
-    estado:boolean;
+    estado?:boolean;
     user: UserModel;
 }

@@ -12,10 +12,10 @@
             <label for="correo" data-error="wrong" data-success="right">Correo electrónico</label>
             <div class="warning-validator" *ngIf="fgv.correo.errors   && (fgv.correo.dirty || fgv.correo.touched)">
               <strong *ngIf="fgv.correo.errors.required"> 
-                this field is required.
+                Este campo es requerido.
               </strong>
               <strong *ngIf="fgv.correo.errors.email ">
-                this field must be a correct correo format.
+                Este campo debe tener un formato de correo electrónico correcto.
               </strong>
           </div>
         </div>
@@ -27,14 +27,14 @@
             <label for="password">Contraseña</label>
             <div class="warning-validator" *ngIf="fgv.password.errors   && (fgv.password.dirty || fgv.password.touched)">
               <strong> 
-                this field is required.
+                Este campo es requerido.
               </strong>
           </div>
           </div>
         </div>
-        <div class="row">
+        <div class="center">
           <div class="input-field col s12">
-            <button (click)="LoginPerfilFn()" class="btn waves-effect waves-light" type="button" name="action">Login
+            <button (click)="LoginPerfilFn()" class="btn waves-effect waves-light" type="button" name="action">Ingresar
               <i class="material-icons right">send</i>
             </button>          
           </div>
