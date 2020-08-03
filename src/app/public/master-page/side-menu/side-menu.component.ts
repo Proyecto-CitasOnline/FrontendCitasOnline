@@ -1,3 +1,5 @@
+import { SecurityService } from './../../../services/security.service';
+import { Subscription } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideMenuComponent implements OnInit {
 
-  constructor() { }
+  isLogged: Boolean = false;
+  rol: Number = 0;
+
+  subscription: Subscription;
+
+  constructor(private service: SecurityService) { } 
 
   ngOnInit(): void {
+    this.subscription = this.service.getUserData().subscribe(data => {
+      this.isLogged = data.isLogged;
+      this.rol = data.rol;
+    });
   }
 
 }

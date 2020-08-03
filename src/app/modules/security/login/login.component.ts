@@ -1,4 +1,4 @@
-import { MD5 } from 'crypto-js/md5';
+import { MD5 } from 'crypto-js';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -52,7 +52,8 @@ export class LoginComponent implements OnInit {
       this.service.PerfilLogin(model).subscribe(
         data => {
           this.service.saveSessionData(data);
-          showMessage("Bienvenido a Matching");
+          
+          //showMessage("Bienvenido a Matching. Ten seguridad en que encontrarás lo que buscas. Esperamos cumplir todas las expectativas que tengas.");
           this.router.navigate(['/home']);
         },
         error => {
