@@ -57,75 +57,89 @@
               </div>
               
               
-            <div class="input-field col s6">
+            
+              <div  class="input-field col s6">
                 <i class="material-icons prefix">wc</i>
-                <input id="sexo" formControlName ="sexo" type="text" >
-                <label for="sexo">Sexo (H-M) </label>
+                <select formControlName = "sexo">
+                 <option selected value="masculino">Masculino</option>
+                  <option value="femenino">Femenino</option>
+                </select>
+                <label>Sexo</label>
                 <div class="warning-validator" *ngIf="fgv.sexo.errors   && (fgv.sexo.dirty || fgv.sexo.touched)">
                   <strong *ngIf="fgv.sexo.errors.required">
                     Este campo es requerido.
                   </strong> 
-                  <strong *ngIf="fgv.sexo.errors.minlength">
-                    Este campo debe tener al menos  {{sexoMinLength}} caracteres.
-                  </strong>
-                  <strong *ngIf="fgv.sexo.errors.maxlength">
-                    Este campo debe tener máximo  {{sexoMaxLength}} caracteres.
-                  </strong>
-  
-  
                 </div>  
             </div>
-         
+          </div>
             
             <div class="row">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">date_range</i> 
-                  <input id="fechaNacimiento" formControlName ="fechaNacimiento" type="text" >
-                    <label for="fechaNacimiento">Fecha de nacimiento</label>
-                    <div class="warning-validator" *ngIf="fgv.fechaNacimiento.errors   && (fgv.fechaNacimiento.dirty || fgv.fechaNacimiento.touched)">
+                    <input  id="fechaNacimiento" formControlName ="fechaNacimiento" type="text"  >
+                    <label for="fechaNacimiento">Fecha de nacimiento</label><div class="warning-validator" *ngIf="fgv.fechaNacimiento.errors   && (fgv.fechaNacimiento.dirty || fgv.fechaNacimiento.touched)">
                       <strong *ngIf="fgv.fechaNacimiento.errors.required">
-                        Este campo es requerido.
+                        Este campo es requerido.a
                       </strong> 
                     </div>
                 </div>
-                <div class="input-field col s6">
-                    <i class="material-icons prefix"> library_books</i>
-                    <input id="escolaridad" type="text" >
-                    <label for="escolaridad">Nivel de escolaridad</label>
-                </div>
+              
+                
+                
+                <div  class="input-field col s6">
+                  <i class="material-icons prefix"> library_books</i>
+                  <select id = "escolaridad">
+                    <option value="" disabled selected>elige una opcion</option>
+                   <option  value="bachiller">Bachiller</option>
+                    <option value="profesional">Profesional</option>
+                  </select>
+                  <label>Escolaridad</label>
   
             </div> 
-          </div>
+          
+  
+            </div> 
+          
           <div class="row">
-            <div class="input-field col s6">
+            <div  class="input-field col s6">
+              <i class="material-icons prefix">wc</i>
+              <select formControlName = "estadoCivil">
                 <i class="material-icons prefix">favorite_border </i>
-                <input id="estadoCivil" formControlName ="estadoCivil" type="text" >
-                <label for="estadoCivil">Estado civil</label>
+               <option selected value="casado">Casado</option>
+                <option selected value="soltero"> Soltero </option>
+                <option selected value="viud@">viud@</option>
+              </select>
+              <label>Estado Civil</label>
+            
                 <div class="warning-validator" *ngIf="fgv.estadoCivil.errors   && (fgv.estadoCivil.dirty || fgv.estadoCivil.touched)">
                   <strong *ngIf="fgv.estadoCivil.errors.required">
                     Este campo es requerido.
                   </strong>
-                  <strong *ngIf="fgv.estadoCivil.errors.minlength">
-                    Este campo debe tener al menos {{civilMinLength}} caracteres.
-                  </strong>
                 </div>  
               </div>
-              <div class="input-field col s6">
+          
+              <div  class="input-field col s6">
                 <i class="material-icons prefix">wc</i>
-                <input id="orientacionSexual" formControlName ="orientacionSexual" type="text" >
-                <label for="orientacionSexual">Orientacion sexual</label>
+                <select formControlName = "orientacionSexual">
+                 <option selected value="heterosexual">Heterosexual</option>
+                  <option value="homosexual"> Homosexual </option>
+                  <option value="bisexual">Bisexual</option>
+                </select>
+                <label>orientacion Sexual</label>
+    
                 <div class="warning-validator" *ngIf="fgv.orientacionSexual.errors   && (fgv.orientacionSexual.dirty || fgv.orientacionSexual.touched)">
                   <strong *ngIf="fgv.orientacionSexual.errors.required">
                     Este campo es requerido.
                   </strong>
-                </div>
               </div>
-  
+            </div>
               <div class="input-field col s6">
                 <i class="material-icons prefix">card_travel</i>
                 <input id="ocupacion" type="text" >
                 <label for="ocupacion">Ocupación</label>
               </div>
+              
+            
             </div>
               <div class="row">
                 <div class="input-field col s4">
