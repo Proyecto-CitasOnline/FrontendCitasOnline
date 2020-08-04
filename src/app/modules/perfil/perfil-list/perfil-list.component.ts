@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { PerfilModel } from '../../../models/parameters/perfil.model';
+import { PerfilService } from '../../../services/parameters/perfil.service';
+
+declare const showMessage:any;
 
 @Component({
   selector: 'app-perfil-list',
@@ -7,9 +11,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilListComponent implements OnInit {
 
-  constructor() { }
+  recordList: PerfilModel[];
+
+  constructor(private service: PerfilService) { }
 
   ngOnInit(): void {
+    this.fillRecords();
   }
 
+  fillRecords(){
+    this.service.getAllRecords().subscribe(
+      data=>{
+        this.recordList=data;
+        console.log(this.recordList);
+      },
+      error=>{
+        showMessage("Hay un error en la comunicacion con el backend");
+      }
+    );
+  }
 }

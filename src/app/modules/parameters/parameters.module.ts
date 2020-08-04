@@ -12,10 +12,11 @@ import { OrientacionListComponent } from './orientacion/orientacion-list/orienta
 import { EstadoCivilCreationComponent } from './estado-civil/estado-civil-creation/estado-civil-creation.component';
 import { EstadoCivilEditionComponent } from './estado-civil/estado-civil-edition/estado-civil-edition.component';
 import { EstadoCivilListComponent } from './estado-civil/estado-civil-list/estado-civil-list.component';
+import { PaisComponent } from './pais/pais.component';
 
 
 @NgModule({
-  declarations: [CiudadCreationComponent, CiudadEditionComponent, CiudadListComponent, CiudadRemoveComponent, OrientacionCreationComponent, OrientacionEditionComponent, OrientacionListComponent, EstadoCivilCreationComponent, EstadoCivilEditionComponent, EstadoCivilListComponent],
+  declarations: [CiudadCreationComponent, CiudadEditionComponent, CiudadListComponent, CiudadRemoveComponent, OrientacionCreationComponent, OrientacionEditionComponent, OrientacionListComponent, EstadoCivilCreationComponent, EstadoCivilEditionComponent, EstadoCivilListComponent, PaisComponent],
   imports: [
     CommonModule,
     ParametersRoutingModule
