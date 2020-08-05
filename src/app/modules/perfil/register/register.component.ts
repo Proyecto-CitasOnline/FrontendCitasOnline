@@ -7,6 +7,9 @@ import {M} from '../../../../../node_modules/materialize-css'
 import { Router } from '@angular/router';
 
 declare const showMessage: any;
+declare const initSelect: any;
+declare const initDateP: any;
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -18,9 +21,7 @@ export class RegisterComponent implements OnInit {
   nombreMinLength = FormsConfig.NOMBRE_MIN_LENGTH;
   telefonoMinLength = FormsConfig.TELEFONO_MIN_LENGTH;
   telefonoMaxLength = FormsConfig.TELEFONO_MAX_LENGTH;
-  sexoMinLength = FormsConfig.SEXO_MIN_LENGTH;
-  sexoMaxLength = FormsConfig.SEXO_MAX_LENGTH;
-  civilMinLength = FormsConfig.CIVIL_MIN_LENGTH;
+  
 
 
 
@@ -35,6 +36,8 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.FormBuilding();
+    initSelect();
+    initDateP();
   
   }
 
@@ -43,9 +46,9 @@ export class RegisterComponent implements OnInit {
       nombre: ['', [Validators.required, Validators.minLength(this.nombreMinLength)]],
       correo: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required, Validators.minLength(this.telefonoMinLength), Validators.maxLength(this.telefonoMaxLength)]],
-      sexo: ['', [Validators.required, , Validators.minLength(this.sexoMinLength), Validators.maxLength(this.sexoMaxLength)]],
+      sexo: ['', [Validators.required]],
       fechaNacimiento: ['', [Validators.required]],
-      estadoCivil: ['', [Validators.required, , Validators.minLength(this.civilMinLength)]],
+      estadoCivil: ['', [Validators.required]],
       orientacionSexual: ['',[Validators.required]]
     });
   }
