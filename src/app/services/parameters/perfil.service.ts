@@ -22,7 +22,7 @@ export class PerfilService {
   
   saveNewRecord(record:PerfilModel): Observable<PerfilModel>{
   return this.http.post<PerfilModel>(`${ServiceConfig.BASE_URL}${this.entity}`,record,{
-    headers: new HttpHeaders({
+      headers: new HttpHeaders({
       Authorization:`Bearer ${this.token}`
     })
   });

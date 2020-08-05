@@ -26,7 +26,7 @@ export class PerfilListComponent implements OnInit {
         console.log(this.recordList);
       },
       error=>{
-        showMessage("Hay un error en la comunicacion con el backend");
+        showMessage("Hay un error en la comunicación con el backend");
       }
     );
   }

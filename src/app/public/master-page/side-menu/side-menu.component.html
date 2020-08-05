@@ -1,6 +1,6 @@
 <ul  id="slide-out" class="sidenav">
     <li><div class="user-view">
-      <div class="background">
+      <div class="background purple lighten-4">
         <img src="https://www.reginavelasquez.com/wp-content/uploads/cielo-atardecer.jpg">
       </div>
       <a href="#user"><img class="circle" src="https://www.meditaenmalaga.org/wp-content/uploads/2019/03/chica-cejas-flor-sonriendo-500x400.jpg"></a>
@@ -9,13 +9,16 @@
     </div>
     <a class="waves-effect" routerLink ="/security/edit-profile">Editar perfil</a>
   </li>
+  <li><div class="divider"></div></li>
+  <li><a class="subheader">Parametros</a></li>
+  <li><a *ngIf = "isLogged && rol == 2" class="waves-effect" href="/parameters/ciudad-list">Ciudades</a></li>
+  <li><a *ngIf = "isLogged && rol == 2" class="waves-effect" href="/parameters/estado-civil-list">Estado civil</a></li>
+  <li><a *ngIf = "isLogged && rol == 2" class="waves-effect" href="/parameters/orientacion-list">Orientaciones sexuales</a></li>
+  <li><a *ngIf = "isLogged && rol == 2" class="waves-effect" href="/parameters/pais">País</a></li>
 
-    <li><div class="divider"></div></li>
-    <li><a class="subheader">Parametros</a></li>
-    <li><a *ngIf = " isLogged && rol == 2" class="waves-effect" href="/parameters/ciudad-list">Ciudades</a></li>
-    <li><a *ngIf = "isLogged && rol == 2" class="waves-effect" href="/parameters/civil-list">Estado civil</a></li>
-    <li><a *ngIf = "isLogged && rol == 2" class="waves-effect" href="/parameters/orientacion-list">Orientaciones sexuales</a></li>
+
+   
 </ul>
   
-  <a *ngIf="isLogged" href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  <a *ngIf="isLogged" href="#" data-target="slide-out " class="sidenav-trigger "><i class="material-icons ">menu</i></a>
         
