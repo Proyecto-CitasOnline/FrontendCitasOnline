@@ -3,6 +3,7 @@ import { EstadoCivilModel } from './../../../../models/parameters/estado-civil.m
 import { Component, OnInit } from '@angular/core';
 
 declare const showMessage:any;
+declare const showRemoveConfirmationWindow: any;
 @Component({
   selector: 'app-estado-civil-list',
   templateUrl: './estado-civil-list.component.html',
@@ -28,6 +29,10 @@ export class EstadoCivilListComponent implements OnInit {
         showMessage("Hay un error en la comunicación con el backend");
       }
     );
+  }
+
+  RemoveConfirmation (){
+    showRemoveConfirmationWindow();
   }
 
 }

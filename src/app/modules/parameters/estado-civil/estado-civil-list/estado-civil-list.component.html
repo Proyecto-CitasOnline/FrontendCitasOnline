@@ -1,1 +1,31 @@
-<p>estado-civil-list works!</p>
+<a routerLink= "/parameters/estado-civil-creation" class=" btn #ab47bc waves-effect waves-light "><i class="material-icons left">add</i>Nuevo registro</a>
+<br/>
+<br/>
+<table class="highlight responsive-table">
+    <thead>
+        <tr>
+            <td>
+                Nombre
+            </td>
+            <td>
+                Editar
+            </td>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let r of recordList">
+           
+            <td>
+                {{r.nombre}}
+            </td>
+            <td>
+                <a routerLink= "/parameters/estado-civil-edition/{{r.id}}" routerLinkActivate = "royter-link-activate" class=" btn #ab47bc waves-effect waves-light "><i class="material-icons left">edit</i>Editar</a>
+
+             </td>
+             <td>
+               
+            </td>
+        </tr>
+    </tbody>
+</table>

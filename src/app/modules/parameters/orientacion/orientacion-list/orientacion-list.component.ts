@@ -3,6 +3,7 @@ import { OrientacionModel } from './../../../../models/parameters/orientacion.mo
 import { Component, OnInit } from '@angular/core';
 
 declare const showMessage:any;
+
 @Component({
   selector: 'app-orientacion-list',
   templateUrl: './orientacion-list.component.html',
@@ -29,4 +30,6 @@ export class OrientacionListComponent implements OnInit {
       }
     );
   }
+
+  
 }

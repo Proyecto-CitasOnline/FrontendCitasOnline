@@ -3,6 +3,7 @@ import { PaisModel } from './../../../../models/parameters/pais.model';
 import { Component, OnInit } from '@angular/core';
 
 declare const showMessage:any;
+declare const showRemoveConfirmationWindow: any;
 @Component({
   selector: 'app-pais-list',
   templateUrl: './pais-list.component.html',
@@ -29,5 +30,10 @@ export class PaisListComponent implements OnInit {
       }
     );
   }
+
+    RemoveConfirmation (){
+      showRemoveConfirmationWindow();
+    }
+  
 
 }
