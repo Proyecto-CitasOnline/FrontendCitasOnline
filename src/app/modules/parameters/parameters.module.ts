@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -12,11 +13,13 @@ import { OrientacionListComponent } from './orientacion/orientacion-list/orienta
 import { EstadoCivilCreationComponent } from './estado-civil/estado-civil-creation/estado-civil-creation.component';
 import { EstadoCivilEditionComponent } from './estado-civil/estado-civil-edition/estado-civil-edition.component';
 import { EstadoCivilListComponent } from './estado-civil/estado-civil-list/estado-civil-list.component';
-import { PaisComponent } from './pais/pais.component';
+import { PaisCreationComponent } from './pais/pais-creation/pais-creation.component';
+import { PaisEditionComponent } from './pais/pais-edition/pais-edition.component';
+import { PaisListComponent } from './pais/pais-list/pais-list.component';
 
 
 @NgModule({
-  declarations: [CiudadCreationComponent, CiudadEditionComponent, CiudadListComponent, CiudadRemoveComponent, OrientacionCreationComponent, OrientacionEditionComponent, OrientacionListComponent, EstadoCivilCreationComponent, EstadoCivilEditionComponent, EstadoCivilListComponent, PaisComponent],
+  declarations: [CiudadCreationComponent, CiudadEditionComponent, CiudadListComponent, CiudadRemoveComponent, OrientacionCreationComponent, OrientacionEditionComponent, OrientacionListComponent, EstadoCivilCreationComponent, EstadoCivilEditionComponent, EstadoCivilListComponent, PaisCreationComponent, PaisEditionComponent,  PaisListComponent],
   imports: [
     CommonModule,
     ParametersRoutingModule

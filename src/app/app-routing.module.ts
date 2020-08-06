@@ -20,6 +20,10 @@ const routes: Routes = [
     path:'perfil',
     loadChildren: () => import('./modules/perfil/perfil.module').then(m => m.PerfilModule)
   },
+  {
+    path:'parameters',
+    loadChildren: () => import('./modules/parameters/parameters.module').then(m => m.ParametersModule)
+  },
   
 
   /** This option always may be at the end */

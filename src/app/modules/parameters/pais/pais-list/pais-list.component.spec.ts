@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PaisComponent } from './pais.component';
+import { PaisListComponent } from './pais-list.component';
 
-describe('PaisComponent', () => {
-  let component: PaisComponent;
-  let fixture: ComponentFixture<PaisComponent>;
+describe('PaisListComponent', () => {
+  let component: PaisListComponent;
+  let fixture: ComponentFixture<PaisListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PaisComponent ]
+      declarations: [ PaisListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PaisComponent);
+    fixture = TestBed.createComponent(PaisListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

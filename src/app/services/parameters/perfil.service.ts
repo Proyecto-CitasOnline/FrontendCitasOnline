@@ -28,19 +28,4 @@ export class PerfilService {
   });
   }
 
-  /* EditRecord(record:PerfilModel): Observable<PerfilModel>{
-    return this.http.put<PerfilModel>(`${ServiceConfig.BASE_URL}${this.entity}`,record,{
-      headers: new HttpHeaders({
-        Authorization:`Bearer ${this.token}`
-      })
-    });
-    } */
-
-    /* DeleteRecord(recordId:String): Observable<any>{
-      return this.http.delete(`${ServiceConfig.BASE_URL}${this.entity}/${recordId}`,{
-        headers: new HttpHeaders({
-          Authorization:`Bearer ${this.token}`
-        })
-      });
-      } */
 }
