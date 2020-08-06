@@ -45,7 +45,6 @@ export class LoginComponent implements OnInit {
       showMessage("Revise la información suministrada. Formatos inválidos.");
       console.log(this.fgValidator)
     } else {
-      //showMessage("Registering..");
      
       let model = this.getLoginData();
       console.log(model);
@@ -53,7 +52,7 @@ export class LoginComponent implements OnInit {
         data => {
           this.service.saveSessionData(data);
           
-          //showMessage("Bienvenido a Matching. Ten seguridad en que encontrarás lo que buscas. Esperamos cumplir todas las expectativas que tengas.");
+          showMessage("Bienvenido a Matching. Ten seguridad en que encontrarás lo que buscas. Esperamos cumplir todas las expectativas que tengas.");
           this.router.navigate(['/home']);
         },
         error => {
