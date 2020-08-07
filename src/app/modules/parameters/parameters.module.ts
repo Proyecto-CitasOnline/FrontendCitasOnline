@@ -16,13 +16,16 @@ import { EstadoCivilListComponent } from './estado-civil/estado-civil-list/estad
 import { PaisCreationComponent } from './pais/pais-creation/pais-creation.component';
 import { PaisEditionComponent } from './pais/pais-edition/pais-edition.component';
 import { PaisListComponent } from './pais/pais-list/pais-list.component';
-
+import {NgxPaginationModule} from 'ngx-pagination'; 
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   declarations: [CiudadCreationComponent, CiudadEditionComponent, CiudadListComponent, CiudadRemoveComponent, OrientacionCreationComponent, OrientacionEditionComponent, OrientacionListComponent, EstadoCivilCreationComponent, EstadoCivilEditionComponent, EstadoCivilListComponent, PaisCreationComponent, PaisEditionComponent,  PaisListComponent],
   imports: [
     CommonModule,
-    ParametersRoutingModule
+    ParametersRoutingModule,
+    NgxPaginationModule,
+    NgxSpinnerModule
   ]
 })
 export class ParametersModule { }

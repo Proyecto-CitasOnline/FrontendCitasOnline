@@ -10,11 +10,10 @@
             <td>
                 Editar
             </td>
-            
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let r of recordList">
+        <tr *ngFor="let r of recordList | paginate: { itemsPerPage: itemsPageAmount, currentPage: page }">
            
             <td>
                 {{r.nombre}}
@@ -23,12 +22,12 @@
                 <a routerLink= "/parameters/orientacion-edition/{{r.id}}" routerLinkActivate = "royter-link-activate" class=" btn #ab47bc waves-effect waves-light "><i class="material-icons left">edit</i>Editar</a>
 
              </td>
-             <td>
-               
-            </td>
         </tr>
     </tbody>
 </table>
+<pagination-controls (pageChange)="page = $event"></pagination-controls>
+<ngx-spinner></ngx-spinner> 
+
 
 
 

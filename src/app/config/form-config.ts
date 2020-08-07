@@ -5,6 +5,7 @@ export  namespace FormsConfig{
     export const SEXO_MIN_LENGTH = 1;
     export const SEXO_MAX_LENGTH = 1;
     export const CIVIL_MIN_LENGTH = 4;
+    export const  ITEMS_PER_PAGE = 5;   
 
 
 }
