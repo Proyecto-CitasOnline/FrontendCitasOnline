@@ -17,10 +17,10 @@
         <tr *ngFor="let r of recordList | paginate: { itemsPerPage: itemsPageAmount, currentPage: page }">
            
             <td>
-                {{r.nombre}}
+                {{r.Nombre}}
             </td>
             <td>
-                <a routerLink= "/parameters/pais-edition/{{r.id}}" routerLinkActivate = "royter-link-activate" class=" btn #ab47bc waves-effect waves-light "><i class="material-icons left">edit</i>Editar</a>
+                <a routerLink= "/parameters/pais-edition/{{r.id}}" routerLinkActivate = "router-link-activate" class=" btn #ab47bc waves-effect waves-light "><i class="material-icons left">edit</i>Editar</a>
 
              </td>
              
