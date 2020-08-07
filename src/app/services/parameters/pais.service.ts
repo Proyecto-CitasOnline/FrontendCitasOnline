@@ -24,7 +24,8 @@ export class PaisService {
   saveNewRecord(record:PaisModel): Observable<PaisModel>{
   return this.http.post<PaisModel>(`${ServiceConfig.BASE_URL}${this.entity}`,record,{
       headers: new HttpHeaders({
-      Authorization:`Bearer ${this.token}`
+      'Content-Type': 'application/json',
+      'Authorization':`Bearer ${this.token}`
     })
   });
   }

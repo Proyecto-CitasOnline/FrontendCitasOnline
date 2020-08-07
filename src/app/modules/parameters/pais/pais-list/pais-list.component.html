@@ -10,7 +10,9 @@
             <td>
                 Editar
             </td>
-            
+            <td>
+                Eliminar
+            </td>
         </tr>
     </thead>
     <tbody>
@@ -23,9 +25,27 @@
                 <a routerLink= "/parameters/pais-edition/{{r.id}}" routerLinkActivate = "router-link-activate" class=" btn #ab47bc waves-effect waves-light "><i class="material-icons left">edit</i>Editar</a>
 
              </td>
-             
+             <td>
+                <button (click)="RemoveConfirmation(r.id)" class="btn red waves-effect waves-light" type="button" >Eliminar
+                    <i class="material-icons left">delete</i>
+                  </button>
+            </td>
         </tr>
     </tbody>
 </table>
 <pagination-controls (pageChange)="page = $event"></pagination-controls>
 <ngx-spinner></ngx-spinner> 
+
+
+ <!-- Modal Structure -->
+ <div id="removeConfirmationModal" class="modal">
+    <div class="modal-content">
+      <h4>Confirmación de eliminación</h4>
+      <p >¿Estás seguro de eliminar este pais?</p>
+    </div>
+    <div class="modal-footer">
+      <a  class="modal-close #ab47bc waves-effect waves-green btn-flat">Confirmar</a>
+      <a  class="modal-close red waves-effect waves-green btn-flat">Cerrar</a>
+    
+    </div>
+  </div>

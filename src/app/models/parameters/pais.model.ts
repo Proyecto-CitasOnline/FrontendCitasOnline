@@ -1,4 +1,4 @@
 export class PaisModel{
     id?:String;
-    nombre:String;
+    Nombre:String;
 }

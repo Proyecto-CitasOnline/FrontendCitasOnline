@@ -23,11 +23,6 @@ export class RegisterComponent implements OnInit {
   telefonoMaxLength = FormsConfig.TELEFONO_MAX_LENGTH;
   
 
-
-
-
-
-
   constructor(
     private fb: FormBuilder, 
     private service: PerfilService,
