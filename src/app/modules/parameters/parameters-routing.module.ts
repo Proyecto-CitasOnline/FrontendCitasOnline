@@ -25,7 +25,7 @@ const routes: Routes = [
     component: CiudadListComponent
   },
   {
-    path:'ciudad-edition',
+    path:'ciudad-edition/:id',
     component: CiudadEditionComponent
   },
   {
@@ -65,7 +65,7 @@ const routes: Routes = [
     component: PaisListComponent
   },
   {
-    path:'pais-edition',
+    path:'pais-edition/:id',
     component: PaisEditionComponent
   }
 ];

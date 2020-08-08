@@ -20,6 +20,11 @@ export class PaisService {
   getAllRecords() : Observable<PaisModel[]>{
     return this.http.get<PaisModel[]>(`${ServiceConfig.BASE_URL}${this.entity}`);
   }
+
+  getRecordById(id: String) : Observable<PaisModel>{
+    return this.http.get<PaisModel>(`${ServiceConfig.BASE_URL}${this.entity}/${id}`);
+    
+  }
   
   saveNewRecord(record:PaisModel): Observable<PaisModel>{
   return this.http.post<PaisModel>(`${ServiceConfig.BASE_URL}${this.entity}`,record,{
@@ -31,12 +36,20 @@ export class PaisService {
   }
 
   EditRecord(record:PaisModel): Observable<PaisModel>{
-    return this.http.put<PaisModel>(`${ServiceConfig.BASE_URL}${this.entity}`,record,{
+    return this.http.put<PaisModel>(`${ServiceConfig.BASE_URL}${this.entity}/${record.id}`,record,{
       headers: new HttpHeaders({
         Authorization:`Bearer ${this.token}`
       })
     });
     } 
 
-   
+    DeleteRecord(recordId: String): Observable<any> {
+      return this.http.delete(`${ServiceConfig.BASE_URL}${this.entity}/${recordId}`, {
+        headers: new HttpHeaders({
+          Authorization: `Bearer ${this.token}`
+        })
+      });
+    }
+  
 }
+

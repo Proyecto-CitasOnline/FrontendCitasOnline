@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { PaisModel } from 'src/app/models/parameters/pais.model';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+import { PaisService } from 'src/app/services/parameters/pais.service';
+
+declare const showMessage: any;
 
 @Component({
   selector: 'app-pais-edition',
@@ -7,9 +13,89 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaisEditionComponent implements OnInit {
 
-  constructor() { }
+  
+  fgValidator: FormGroup;
+  id: String;
+
+  
+  constructor(
+    private fb: FormBuilder, 
+    private service: PaisService,
+    private router: Router,
+    private route: ActivatedRoute) {
+      this.id = this.route.snapshot.params["id"];
+      console.log("id de get "+this.id);
+    }
+    
 
   ngOnInit(): void {
+    this.FormBuilding();
+    this.getDataOfRecord();
+
+    
+  }
+
+  FormBuilding() {
+    this.fgValidator = this.fb.group({
+      id: ['', [Validators.required]],
+      nombre: ['', [Validators.required]] 
+    });
+  }
+
+  getDataOfRecord(){
+    console.log(this.id);
+    if (this.id) {
+      this.service.getRecordById(this.id).subscribe(
+        data => {
+          console.log(data);
+          this.fgv.id.setValue(this.id);
+          this.fgv.nombre.setValue(data.Nombre);
+         
+        },
+        error => {
+          showMessage("Record not found.");
+          this.router.navigate(['/parameters/pais-list']);
+        }
+      );
+    } else {
+      this.router.navigate(["/parameters/pais-list"]);
+    }
+  }
+
+
+  editRecord() {
+    if (this.fgValidator.invalid) {
+      showMessage("Revise la información suministrada. Formatos inválidos.");
+      console.log(this.fgValidator)
+    } else {
+      //showMessage("Registering..");
+     
+      let model = this.getPaisData();
+      this.service.EditRecord(model).subscribe(
+        data => {
+          showMessage("Pais guardado correctamente!!");
+          this.router.navigate(['/parameters/pais-list']);
+        },
+        error => {
+          console.log(error)
+          showMessage("Error de guardado.");
+        }
+      );
+    }
+  }
+
+  
+
+   getPaisData(): PaisModel{
+    let model = new PaisModel();
+    model.id = this.fgv.id.value;
+    model.Nombre = this.fgv.nombre.value;
+ 
+    return model;
+  }
+
+  get fgv() {
+    return this.fgValidator.controls;
   }
 
 }
