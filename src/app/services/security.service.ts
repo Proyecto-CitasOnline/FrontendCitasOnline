@@ -1,3 +1,4 @@
+import { ChangePasswordModel } from './../models/security/change-password.model';
 import { PasswordResetModel } from './../models/security/password-reset.model';
 import { Injectable } from '@angular/core';
 import { UserModel } from '../models/security/user.model';
@@ -56,6 +57,15 @@ export class SecurityService {
     });
   }
 
+  ChangePassword(data: ChangePasswordModel): Observable<any> {
+    return this.http.post<any>(`${ServiceConfig.BASE_URL}cambiar-contrasena`, data, {
+      headers: new HttpHeaders({
+        Authorization: `Bearer ${this.getToken()}`
+      })
+    });
+  }
+
+
 /**
  * Method to update user data
  * @param sessionData User data and token
@@ -107,6 +117,11 @@ VerifyRolInSession(rolId): Boolean{
 getToken():String{
   let currentSession=JSON.parse(this.getSessionData());
   return currentSession.token;
+}
+
+getUserId(): String{
+  let currentSession=JSON.parse(this.getSessionData());
+  return currentSession.id;
 }
 /**
  * Clear session data.

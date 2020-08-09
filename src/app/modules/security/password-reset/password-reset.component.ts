@@ -49,7 +49,7 @@ export class PasswordResetComponent implements OnInit {
       console.log(model);
       this.service.PasswordReset(model).subscribe(
         data => {
-          showMessage("Tu contraseña ha sido modificada correctamente. Por favor revisa tu correo electrónico o tu telefono.");
+          showMessage("Tu contraseña ha sido reestablecida correctamente. Por favor revisa tu correo electrónico o tu telefono.");
           this.router.navigate(['/home']);
         },
         error => {
