@@ -2,11 +2,12 @@ import { MD5 } from 'crypto-js';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserModel } from 'src/app/models/user.model';
+import { UserModel } from 'src/app/models/security/user.model';
 import {SecurityService} from '../../../services/security.service';
 
 
 declare const showMessage: any;
+
 
 @Component({
   selector: 'app-login',

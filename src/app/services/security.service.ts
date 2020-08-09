@@ -1,5 +1,6 @@
+import { PasswordResetModel } from './../models/security/password-reset.model';
 import { Injectable } from '@angular/core';
-import { UserModel } from '../models/user.model';
+import { UserModel } from '../models/security/user.model';
 import { ServiceConfig } from '../config/service-config';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
@@ -48,6 +49,12 @@ export class SecurityService {
       headers: new HttpHeaders({})
     });
 }
+
+  PasswordReset(data: PasswordResetModel): Observable<any> {
+    return this.http.post<any>(`${ServiceConfig.BASE_URL}contrasena-reset`, data, {
+      headers: new HttpHeaders({})
+    });
+  }
 
 /**
  * Method to update user data
