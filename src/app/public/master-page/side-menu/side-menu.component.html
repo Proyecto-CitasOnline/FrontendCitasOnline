@@ -11,7 +11,7 @@
 </li>
 
   <li><div class="divider"></div></li>
-  <li><a class="subheader">Parametros</a></li>
+  <li><a *ngIf = "isLogged && rol == 2" class="subheader">Parametros</a></li>
   <li><a *ngIf = "isLogged && rol == 2" class="waves-effect" href="/parameters/pais-list">País</a></li>
   <li><a *ngIf = "isLogged && rol == 2" class="waves-effect" href="/parameters/ciudad-list">Ciudades</a></li>
   <li><a *ngIf = "isLogged && rol == 2" class="waves-effect" href="/parameters/estado-civil-list">Estados civiles</a></li>

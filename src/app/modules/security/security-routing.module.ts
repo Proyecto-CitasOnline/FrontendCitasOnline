@@ -1,3 +1,5 @@
+import { AuthenticatedGuard } from './../../guards/authenticated.guard';
+import { UnauthenticatedGuard } from './../../guards/unauthenticated.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {LoginComponent}from './login/login.component';
@@ -8,19 +10,23 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 const routes: Routes = [
   {
     path:'login',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [UnauthenticatedGuard]
   },
   {
     path:'logout',
-    component: LogoutComponent
+    component: LogoutComponent,
+    canActivate: [AuthenticatedGuard]
   }, 
   {
     path:'reset',
-    component: PasswordResetComponent
+    component: PasswordResetComponent,
+    canActivate: [UnauthenticatedGuard]
   },
   {
     path:'change-password',
-    component: ChangePasswordComponent
+    component: ChangePasswordComponent,
+    canActivate: [AuthenticatedGuard]
     }
 ];
 

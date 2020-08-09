@@ -81,6 +81,22 @@ getSessionData(){
   return currentSession;
 }
 
+sessionExist(): Boolean{
+  let currentSession=this.getSessionData();
+  return (currentSession) ? true : false;
+}
+
+/**
+ * Verify if user in session has the role of parameter
+ * @param roleId role id to verify
+ */
+VerifyRolInSession(rolId): Boolean{
+  let currentSession=JSON.parse(this.getSessionData());
+  console.log(currentSession.rol);
+  console.log(rolId);
+  return (currentSession.rol == rolId) ? true : false;
+}
+
 getToken():String{
   let currentSession=JSON.parse(this.getSessionData());
   return currentSession.token;

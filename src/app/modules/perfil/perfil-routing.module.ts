@@ -1,3 +1,4 @@
+import { UnauthenticatedGuard } from './../../guards/unauthenticated.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
@@ -9,7 +10,8 @@ import { PerfilRemoveComponent } from './perfil-remove/perfil-remove.component';
 const routes: Routes = [
   {
     path:'register',
-    component:RegisterComponent
+    component:RegisterComponent,
+    canActivate: [UnauthenticatedGuard]
   },
   {
     path:'list',
