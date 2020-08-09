@@ -1,1 +1,28 @@
-<p>ciudad-creation works!</p>
+<fieldset>
+    <legend>Creación de ciudades</legend>
+<div class="row">
+    <form class="col s12" [formGroup]= "fgValidator">
+      <div class="row">
+        <div class="input-field col s6">
+          <input  id="nombre" formControlName="nombre" type="text" class="validate">
+          <label for="nombre">Nombre</label>
+          <div class="warning-validator" *ngIf="fgv.nombre.errors && (fgv.nombre.dirty || fgv.nombre.touched)">
+            <strong *ngIf="fgv.nombre.errors.required">
+              Este campo es requerido.
+            </strong>
+        </div>
+      </div>
+      </div>
+      <div class="row">
+          <div class="input-field col s12">
+            <button class="btn waves-effect waves-light" type="button" (click)="saveNewRecord ()" name="action">Guardar
+                <i class="material-icons right">send</i>
+              </button>
+                &nbsp;&nbsp;
+            <a routerLink= "/parameters/ciudad-list"  class="waves-effect waves-light btn red"><i class="material-icons left">cancel</i>Cancelar</a>
+           
+          </div>
+      </div>
+    </form>
+  </div>
+</fieldset>

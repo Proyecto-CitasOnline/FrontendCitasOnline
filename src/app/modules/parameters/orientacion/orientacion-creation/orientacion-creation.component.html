@@ -1,1 +1,28 @@
-<p>orientacion-creation works!</p>
+<fieldset>
+    <legend>Creación de orientaciones sexuales</legend>
+<div class="row">
+    <form class="col s12" [formGroup]= "fgValidator">
+      <div class="row">
+        <div class="input-field col s6">
+          <input  id="tipo" formControlName="tipo" type="text" class="validate">
+          <label for="tipo">Nombre</label>
+          <div class="warning-validator" *ngIf="fgv.tipo.errors && (fgv.tipo.dirty || fgv.tipo.touched)">
+            <strong *ngIf="fgv.tipo.errors.required">
+              Este campo es requerido.
+            </strong>
+        </div>
+      </div>
+      </div>
+      <div class="row">
+          <div class="input-field col s12">
+            <button class="btn waves-effect waves-light" type="button" (click)="saveNewRecord ()" name="action">Guardar
+                <i class="material-icons right">send</i>
+              </button>
+                &nbsp;&nbsp;
+                <a routerLink= "/parameters/orientacion-list"  class="waves-effect waves-light btn red"><i class="material-icons left">cancel</i>Cancelar</a>
+           
+          </div>
+      </div>
+    </form>
+  </div>
+</fieldset>

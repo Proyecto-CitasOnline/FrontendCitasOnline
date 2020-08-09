@@ -53,7 +53,7 @@ const routes: Routes = [
     component: OrientacionListComponent
   },
   {
-    path:'orientacion-edition',
+    path:'orientacion-edition/:id',
     component: OrientacionEditionComponent
   },
   {

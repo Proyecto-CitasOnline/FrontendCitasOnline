@@ -19,9 +19,10 @@ import { PaisListComponent } from './pais/pais-list/pais-list.component';
 import {NgxPaginationModule} from 'ngx-pagination'; 
 import { NgxSpinnerModule } from "ngx-spinner";
 import {ReactiveFormsModule, FormsModule} from '@angular/forms';
+import { PaisRemoveComponent } from './pais/pais-remove/pais-remove.component';
 
 @NgModule({
-  declarations: [CiudadCreationComponent, CiudadEditionComponent, CiudadListComponent, CiudadRemoveComponent, OrientacionCreationComponent, OrientacionEditionComponent, OrientacionListComponent, EstadoCivilCreationComponent, EstadoCivilEditionComponent, EstadoCivilListComponent, PaisCreationComponent, PaisEditionComponent,  PaisListComponent],
+  declarations: [CiudadCreationComponent, CiudadEditionComponent, CiudadListComponent, CiudadRemoveComponent, OrientacionCreationComponent, OrientacionEditionComponent, OrientacionListComponent, EstadoCivilCreationComponent, EstadoCivilEditionComponent, EstadoCivilListComponent, PaisCreationComponent, PaisEditionComponent,  PaisListComponent, PaisRemoveComponent],
   imports: [
     CommonModule,
     ParametersRoutingModule,

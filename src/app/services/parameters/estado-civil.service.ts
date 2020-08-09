@@ -9,6 +9,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class EstadoCivilService {
+
   entity='estado-civil';
   token:String='';
 
@@ -19,21 +20,35 @@ export class EstadoCivilService {
   getAllRecords() : Observable<EstadoCivilModel[]>{
     return this.http.get<EstadoCivilModel[]>(`${ServiceConfig.BASE_URL}${this.entity}`);
   }
+
+  getRecordById(id: String) : Observable<EstadoCivilModel>{
+    return this.http.get<EstadoCivilModel>(`${ServiceConfig.BASE_URL}${this.entity}/${id}`);
+    
+  }
   
   saveNewRecord(record:EstadoCivilModel): Observable<EstadoCivilModel>{
   return this.http.post<EstadoCivilModel>(`${ServiceConfig.BASE_URL}${this.entity}`,record,{
       headers: new HttpHeaders({
-      Authorization:`Bearer ${this.token}`
+      'Content-Type': 'application/json',
+      'Authorization':`Bearer ${this.token}`
     })
   });
   }
 
   EditRecord(record:EstadoCivilModel): Observable<EstadoCivilModel>{
-    return this.http.put<EstadoCivilModel>(`${ServiceConfig.BASE_URL}${this.entity}`,record,{
+    return this.http.put<EstadoCivilModel>(`${ServiceConfig.BASE_URL}${this.entity}/${record.id}`,record,{
       headers: new HttpHeaders({
         Authorization:`Bearer ${this.token}`
       })
     });
     } 
 
+    DeleteRecord(recordId: String): Observable<any> {
+      return this.http.delete(`${ServiceConfig.BASE_URL}${this.entity}/${recordId}`, {
+        headers: new HttpHeaders({
+          Authorization: `Bearer ${this.token}`
+        })
+      });
+    }
+  
 }
