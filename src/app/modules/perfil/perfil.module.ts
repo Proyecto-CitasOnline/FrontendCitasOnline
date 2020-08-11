@@ -8,6 +8,8 @@ import { PerfilRemoveComponent } from './perfil-remove/perfil-remove.component';
 import { PerfilListComponent } from './perfil-list/perfil-list.component';
 import { RegisterComponent } from './register/register.component';
 import {ReactiveFormsModule, FormsModule} from '@angular/forms';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import {ReactiveFormsModule, FormsModule} from '@angular/forms';
     CommonModule,
     PerfilRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgxSpinnerModule,
+    NgxPaginationModule
   ]
 })
 export class PerfilModule { }

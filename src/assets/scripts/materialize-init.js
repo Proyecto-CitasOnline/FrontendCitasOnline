@@ -2,11 +2,10 @@
 
     
 
-    function initSelect(){
-    var elems = document.querySelectorAll('select');
-        var instances = M.FormSelect.init(elems, {});
-      
-    };
+function initSelect(){
+var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, {});      
+};
 
     function initDateP(){
         var elems = document.querySelectorAll('.datepicker');

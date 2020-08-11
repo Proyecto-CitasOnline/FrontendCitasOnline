@@ -22,7 +22,7 @@ const routes: Routes = [
     component:PerfilCreationComponent
   },
   {
-    path:'edition',
+    path:'edition/:id',
     component:PerfilEditionComponent
   },
   {

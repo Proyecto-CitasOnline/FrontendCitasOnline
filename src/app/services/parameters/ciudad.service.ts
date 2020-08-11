@@ -15,9 +15,10 @@ export class CiudadService {
 
   constructor(private http: HttpClient,private securityService: SecurityService) { 
     this.token=this.securityService.getToken();
-  }
+  } 
 
   getAllRecords() : Observable<CiudadModel[]>{
+    console.log("entre getAllRecords")
     return this.http.get<CiudadModel[]>(`${ServiceConfig.BASE_URL}${this.entity}`);
   }
 

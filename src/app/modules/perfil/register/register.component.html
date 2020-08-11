@@ -146,6 +146,18 @@
               </div>
               
             
+              <div class="input-field col s6">
+                <select class="browser-default" formControlName="ciudadId">                 
+                   <option *ngFor="let ciudad of ciudadList" value="{{ciudad.id}}">{{ciudad.Nombre}}</option>
+                </select>
+              </div>
+
+              <div class="input-field col s6">
+                <select class="browser-default" formControlName="paisId">
+                  <option *ngFor="let pais of paisList" value="{{pais.id}}">{{pais.Nombre}}</option>
+                </select>
+              </div>
+            
             </div>
               <div class="row">
                 <div class="input-field col s4">
