@@ -24,7 +24,7 @@ export class OrientacionEditionComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute) {
       this.id = this.route.snapshot.params["id"];
-      console.log("id de get "+this.id);
+     
     }
     
 
@@ -43,11 +43,9 @@ export class OrientacionEditionComponent implements OnInit {
   }
 
   getDataOfRecord(){
-    console.log(this.id);
     if (this.id) {
       this.service.getRecordById(this.id).subscribe(
         data => {
-          console.log(data);
           this.fgv.id.setValue(this.id);
           this.fgv.tipo.setValue(data.tipo);
          
@@ -66,19 +64,17 @@ export class OrientacionEditionComponent implements OnInit {
   editRecord() {
     if (this.fgValidator.invalid) {
       showMessage("Revise la información suministrada. Formatos inválidos.");
-      console.log(this.fgValidator)
+      
     } else {
-      //showMessage("Registering..");
      
       let model = this.getOrientacionData();
       this.service.EditRecord(model).subscribe(
         data => {
-          showMessage("Orientacion guardado correctamente!!");
+          showMessage("Orientacion sexual  guardada correctamente!!");
           this.router.navigate(['/parameters/orientacion-list']);
         },
         error => {
-          console.log(error)
-          showMessage("Error de guardado.");
+          showMessage("Ha ocurrido un error de guardado.");
         }
       );
     }

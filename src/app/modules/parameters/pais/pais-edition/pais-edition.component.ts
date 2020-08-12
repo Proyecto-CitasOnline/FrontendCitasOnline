@@ -24,7 +24,7 @@ export class PaisEditionComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute) {
       this.id = this.route.snapshot.params["id"];
-      console.log("id de get "+this.id);
+      
     }
     
 
@@ -43,11 +43,9 @@ export class PaisEditionComponent implements OnInit {
   }
 
   getDataOfRecord(){
-    console.log(this.id);
     if (this.id) {
       this.service.getRecordById(this.id).subscribe(
         data => {
-          console.log(data);
           this.fgv.id.setValue(this.id);
           this.fgv.nombre.setValue(data.Nombre);
          
@@ -66,9 +64,8 @@ export class PaisEditionComponent implements OnInit {
   editRecord() {
     if (this.fgValidator.invalid) {
       showMessage("Revise la información suministrada. Formatos inválidos.");
-      console.log(this.fgValidator)
+      
     } else {
-      //showMessage("Registering..");
      
       let model = this.getPaisData();
       this.service.EditRecord(model).subscribe(
@@ -77,8 +74,7 @@ export class PaisEditionComponent implements OnInit {
           this.router.navigate(['/parameters/pais-list']);
         },
         error => {
-          console.log(error)
-          showMessage("Error de guardado.");
+          showMessage("Ha ocurrido un error de guardado.");
         }
       );
     }

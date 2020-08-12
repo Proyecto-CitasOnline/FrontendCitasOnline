@@ -36,9 +36,8 @@ export class EstadoCivilCreationComponent implements OnInit {
   saveNewRecord() {
     if (this.fgValidator.invalid) {
       showMessage("Revise la información suministrada. Formatos inválidos.");
-      console.log(this.fgValidator)
+      
     } else {
-      //showMessage("Registering..");
      
       let model = this.getEstadoCivilData();
       this.service.saveNewRecord(model).subscribe(
@@ -47,8 +46,8 @@ export class EstadoCivilCreationComponent implements OnInit {
           this.router.navigate(['/parameters/estado-civil-list']);
         },
         error => {
-          console.log(error)
-          showMessage("Error de guardado.");
+         
+          showMessage("Ha ocurrido un error de guardado.");
         }
       );
     }

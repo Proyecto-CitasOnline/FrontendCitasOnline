@@ -44,11 +44,10 @@ export class LoginComponent implements OnInit {
   LoginPerfilFn() {
     if (this.fgValidator.invalid) {
       showMessage("Revise la información suministrada. Formatos inválidos.");
-      console.log(this.fgValidator)
+      
     } else {
      
       let model = this.getLoginData();
-      console.log(model);
       this.service.PerfilLogin(model).subscribe(
         data => {
           this.service.saveSessionData(data);

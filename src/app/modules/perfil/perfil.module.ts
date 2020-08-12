@@ -10,10 +10,11 @@ import { RegisterComponent } from './register/register.component';
 import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { PerfilImagesComponent } from './perfil-images/perfil-images.component';
 
 
 @NgModule({
-  declarations: [PerfilCreationComponent, PerfilEditionComponent, PerfilRemoveComponent, PerfilListComponent, RegisterComponent],
+  declarations: [PerfilCreationComponent, PerfilEditionComponent, PerfilRemoveComponent, PerfilListComponent, RegisterComponent, PerfilImagesComponent],
   imports: [
     CommonModule,
     PerfilRoutingModule,

@@ -24,8 +24,9 @@ export class PaisListComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-    this.spinner.show();
+    
     this.fillRecords();
+    this.spinner.show();
     setTimeout(() => {
       /** spinner ends after 5 seconds */
       this.spinner.hide();
@@ -37,9 +38,7 @@ export class PaisListComponent implements OnInit {
     this.service.getAllRecords().subscribe(
       data => {
         this.recordList = data;
-        console.log(this.recordList);
-
-
+        
       },
       error => {
         showMessage("Hay un error en la comunicación con el backend");

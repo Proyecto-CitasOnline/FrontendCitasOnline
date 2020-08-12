@@ -1,3 +1,4 @@
+import { PerfilImagesComponent } from './perfil-images/perfil-images.component';
 import { UnauthenticatedGuard } from './../../guards/unauthenticated.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path:'remove',
     component:PerfilRemoveComponent
+  },
+  {
+    path:'images/:id',
+    component:PerfilImagesComponent
   }
 ];
 

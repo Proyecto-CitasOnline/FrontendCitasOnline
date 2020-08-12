@@ -37,9 +37,6 @@ export class PerfilListComponent implements OnInit {
     this.service.getAllRecords().subscribe(
       data => {
         this.recordList = data;
-        console.log(this.recordList);
-
-
       },
       error => {
         showMessage("Hay un error en la comunicación con el backend");
@@ -58,7 +55,7 @@ export class PerfilListComponent implements OnInit {
       this.service.DeleteRecord(this.idToRemove).subscribe(
         data => {
           this.idToRemove = '';
-          showMessage("País removido exitosamente");
+          showMessage("Perfil removido exitosamente");
           this.fillRecords();
         },
         error => {

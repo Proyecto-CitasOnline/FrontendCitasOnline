@@ -18,7 +18,6 @@ export class CiudadService {
   } 
 
   getAllRecords() : Observable<CiudadModel[]>{
-    console.log("entre getAllRecords")
     return this.http.get<CiudadModel[]>(`${ServiceConfig.BASE_URL}${this.entity}`);
   }
 

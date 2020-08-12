@@ -1,4 +1,5 @@
 
+
 <br />
 <fieldset>
     <div class="row">
@@ -140,23 +141,34 @@
               </div>
             </div>
               <div class="input-field col s6">
-                <i class="material-icons prefix">card_travel</i>
+                <i class="browser-default" class="material-icons prefix">card_travel</i>
                 <input id="ocupacion" type="text" >
                 <label for="ocupacion">Ocupación</label>
               </div>
-              
-            
               <div class="input-field col s6">
-                <select class="browser-default" formControlName="ciudadId">                 
-                   <option *ngFor="let ciudad of ciudadList" value="{{ciudad.id}}">{{ciudad.Nombre}}</option>
-                </select>
+                <select  class="browser-default" formControlName="paisId">       
+                  <option value="" disabled selected>Elige un país</option>   
+                  <option *ngFor="let pais of paisList" selected value="{{pais.id}}">{{pais.Nombre}}</option>
+                </select> 
+                <label class= "active"> País</label>
               </div>
 
-              <div class="input-field col s6">
-                <select class="browser-default" formControlName="paisId">
-                  <option *ngFor="let pais of paisList" value="{{pais.id}}">{{pais.Nombre}}</option>
+            </div>
+
+              <div class="row">
+                
+
+              <div  class="input-field col s6">
+                <i class="material-icons prefix">location_city</i>
+                <select formControlName = "ciudadId">
+                  <option value="" disabled selected>Elige una opción</option>
+                 <option *ngFor="let ciudad of ciudadList" value="{{ciudad.id}}">{{ciudad.Nombre}}</option>
                 </select>
-              </div>
+                <label>Ciudad</label>              
+                
+            </div>
+        
+              
             
             </div>
               <div class="row">

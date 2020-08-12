@@ -37,9 +37,6 @@ export class CiudadListComponent implements OnInit {
     this.service.getAllRecords().subscribe(
       data => {
         this.recordList = data;
-        console.log(this.recordList);
-
-
       },
       error => {
         showMessage("Hay un error en la comunicación con el backend");

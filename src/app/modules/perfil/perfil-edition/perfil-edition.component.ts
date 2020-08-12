@@ -97,7 +97,6 @@ export class PerfilEditionComponent implements OnInit {
 
 
   FormBuilding() {
-    console.log("formControlName")
     this.fgValidator = this.fb.group({
       id: ['', [Validators.required]],
       nombre: ['', [Validators.required, Validators.minLength(this.nombreMinLength)]],
@@ -117,9 +116,8 @@ export class PerfilEditionComponent implements OnInit {
   EditRecord() {
     if (this.fgValidator.invalid) {
       showMessage("Revise la información suministrada. Formatos inválidos.");
-      console.log(this.fgValidator)
+      
     } else {
-      //showMessage("Registering..");
      
       let model = this.getRecordData();
       this.service.EditRecord(model).subscribe(
@@ -128,7 +126,7 @@ export class PerfilEditionComponent implements OnInit {
           this.router.navigate(['/security/login']);
         },
         error => {
-          showMessage("Error de registro.");
+          showMessage("Ha ocurrido un error de registro.");
         }
       );
     }

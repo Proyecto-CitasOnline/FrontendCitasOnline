@@ -36,19 +36,17 @@ export class OrientacionCreationComponent implements OnInit {
   saveNewRecord() {
     if (this.fgValidator.invalid) {
       showMessage("Revise la información suministrada. Formatos inválidos.");
-      console.log(this.fgValidator)
+      
     } else {
-      //showMessage("Registering..");
      
       let model = this.getOrientacionData();
       this.service.saveNewRecord(model).subscribe(
         data => {
-          showMessage("Orientacion guardado correctamente!!");
+          showMessage("Orientación sexual guardada correctamente!!");
           this.router.navigate(['/parameters/orientacion-list']);
         },
         error => {
-          console.log(error)
-          showMessage("Error de guardado.");
+          showMessage("Ha ocurrido un error de guardado.");
         }
       );
     }

@@ -36,19 +36,18 @@ export class CiudadCreationComponent implements OnInit {
   saveNewRecord() {
     if (this.fgValidator.invalid) {
       showMessage("Revise la información suministrada. Formatos inválidos.");
-      console.log(this.fgValidator)
+     
     } else {
-      //showMessage("Registering..");
      
       let model = this.getCiudadData();
       this.service.saveNewRecord(model).subscribe(
         data => {
-          showMessage("Ciudad guardado correctamente!!");
+          showMessage("Ciudad guardada correctamente.");
           this.router.navigate(['/parameters/ciudad-list']);
         },
         error => {
-          console.log(error)
-          showMessage("Error de guardado.");
+         
+          showMessage("Ha ocurrido un error de guardado.");
         }
       );
     }

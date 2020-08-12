@@ -46,7 +46,6 @@ export class PasswordResetComponent implements OnInit {
     } else {
      
       let model = this.getPasswordData();
-      console.log(model);
       this.service.PasswordReset(model).subscribe(
         data => {
           showMessage("Tu contraseña ha sido reestablecida correctamente. Por favor revisa tu correo electrónico o tu telefono.");

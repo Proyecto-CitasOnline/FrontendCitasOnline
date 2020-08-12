@@ -109,8 +109,6 @@ export class SecurityService {
    */
   VerifyRolInSession(rolId): Boolean {
     let currentSession = JSON.parse(this.getSessionData());
-    console.log(currentSession.rol);
-    console.log(rolId);
     return (currentSession.rol == rolId) ? true : false;
   }
 

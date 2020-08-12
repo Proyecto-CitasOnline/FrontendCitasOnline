@@ -73,7 +73,6 @@ export class RegisterComponent implements OnInit {
 
 
   FormBuilding() {
-    console.log("formControlName")
     this.fgValidator = this.fb.group({
       nombre: ['', [Validators.required, Validators.minLength(this.nombreMinLength)]],
       correo: ['', [Validators.required, Validators.email]],
@@ -92,9 +91,8 @@ export class RegisterComponent implements OnInit {
   PerfilRegisterFn() {
     if (this.fgValidator.invalid) {
       showMessage("Revise la información suministrada. Formatos inválidos.");
-      console.log(this.fgValidator)
+      
     } else {
-      //showMessage("Registering..");
      
       let model = this.getPerfilData();
       this.service.PerfilRegistering(model).subscribe(
@@ -103,7 +101,7 @@ export class RegisterComponent implements OnInit {
           this.router.navigate(['/security/login']);
         },
         error => {
-          showMessage("Error de registro.");
+          showMessage("Ha ocurrido un error de registrado.");
         }
       );
     }

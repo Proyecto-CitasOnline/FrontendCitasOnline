@@ -37,19 +37,17 @@ export class PaisCreationComponent implements OnInit {
   saveNewRecord() {
     if (this.fgValidator.invalid) {
       showMessage("Revise la información suministrada. Formatos inválidos.");
-      console.log(this.fgValidator)
+      
     } else {
-      //showMessage("Registering..");
      
       let model = this.getPaisData();
       this.service.saveNewRecord(model).subscribe(
         data => {
-          showMessage("Pais guardado correctamente!!");
+          showMessage("País guardado correctamente!!");
           this.router.navigate(['/parameters/pais-list']);
         },
         error => {
-          console.log(error)
-          showMessage("Error de guardado.");
+          showMessage("Ha ocurrido un error de guardado.");
         }
       );
     }

@@ -24,7 +24,7 @@ export class CiudadEditionComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute) {
       this.id = this.route.snapshot.params["id"];
-      console.log("id de get "+this.id);
+     
     }
     
 
@@ -43,11 +43,10 @@ export class CiudadEditionComponent implements OnInit {
   }
 
   getDataOfRecord(){
-    console.log(this.id);
     if (this.id) {
       this.service.getRecordById(this.id).subscribe(
         data => {
-          console.log(data);
+          
           this.fgv.id.setValue(this.id);
           this.fgv.nombre.setValue(data.Nombre);
          
@@ -66,19 +65,17 @@ export class CiudadEditionComponent implements OnInit {
   editRecord() {
     if (this.fgValidator.invalid) {
       showMessage("Revise la información suministrada. Formatos inválidos.");
-      console.log(this.fgValidator)
+      
     } else {
-      //showMessage("Registering..");
      
       let model = this.getCiudadData();
       this.service.EditRecord(model).subscribe(
         data => {
-          showMessage("Ciudad guardado correctamente!!");
+          showMessage("Ciudad guardada correctamente!!");
           this.router.navigate(['/parameters/ciudad-list']);
         },
         error => {
-          console.log(error)
-          showMessage("Error de guardado.");
+          showMessage("Ha ocurrido un error de guardado.");
         }
       );
     }

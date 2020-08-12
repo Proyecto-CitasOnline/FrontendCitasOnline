@@ -40,9 +40,6 @@ export class ChangePasswordComponent implements OnInit {
  */
 ChangePasswordFn() {
     if (this.fgValidator.invalid || (this.fgv.newPassword.value != this.fgv.newPassword2.value)) {
-      console.log(this.fgv.currentPassword.value);
-      console.log(this.fgv.newPassword.value);
-      console.log(this.fgv.newPassword2.value);
       showMessage("Revise la información suministrada. Formatos inválidos.");
     } else {
       let model = this.getPasswordData();

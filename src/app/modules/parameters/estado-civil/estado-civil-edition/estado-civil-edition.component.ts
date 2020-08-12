@@ -24,7 +24,7 @@ export class EstadoCivilEditionComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute) {
       this.id = this.route.snapshot.params["id"];
-      console.log("id de get "+this.id);
+      
     }
     
 
@@ -43,11 +43,10 @@ export class EstadoCivilEditionComponent implements OnInit {
   }
 
   getDataOfRecord(){
-    console.log(this.id);
+   
     if (this.id) {
       this.service.getRecordById(this.id).subscribe(
         data => {
-          console.log(data);
           this.fgv.id.setValue(this.id);
           this.fgv.tipo.setValue(data.tipo);
          
@@ -66,19 +65,17 @@ export class EstadoCivilEditionComponent implements OnInit {
   editRecord() {
     if (this.fgValidator.invalid) {
       showMessage("Revise la información suministrada. Formatos inválidos.");
-      console.log(this.fgValidator)
+     
     } else {
-      //showMessage("Registering..");
      
       let model = this.getEstadoCivilData();
       this.service.EditRecord(model).subscribe(
         data => {
-          showMessage("EstadoCivil guardado correctamente!!");
+          showMessage("Estado civil guardado correctamente!!");
           this.router.navigate(['/parameters/estado-civil-list']);
         },
         error => {
-          console.log(error)
-          showMessage("Error de guardado.");
+          showMessage("Ha ocurrido un error de guardado.");
         }
       );
     }

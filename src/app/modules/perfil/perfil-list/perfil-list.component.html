@@ -1,4 +1,3 @@
-<a routerLink= "/parameters/pais-creation" class=" btn #ab47bc waves-effect waves-light "><i class="material-icons left">add</i>Nuevo registro</a>
 <br/>
 <br/>
 <table class="highlight responsive-table">
@@ -29,10 +28,14 @@
                 Orientacion Sexual
             </td>
             <td>
+                Pais
+            </td>
+            <td>
                 Ciudad
             </td> 
+            
             <td>
-                Pais
+                Imagenes
             </td>
             
             
@@ -66,10 +69,15 @@
                 {{r.orientacionSexual}}
             </td>
             <td>
-                {{r.ciudad.Nombre}}
+                {{r.pais.Nombre}}
             </td>
             <td>
-                {{r.pais.Nombre}}
+                {{r.ciudad.Nombre}}
+            </td>
+            
+            <td>
+                <a routerLink="/perfil/images/{{r.id}}" routerLinkActive="router-link-active"
+                    class="waves-effect waves-light btn orange"><i class="material-icons left">edit</i>Imagenes</a>
             </td>
             
             
