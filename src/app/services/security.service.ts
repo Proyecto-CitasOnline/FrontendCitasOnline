@@ -112,6 +112,10 @@ export class SecurityService {
     return (currentSession.rol == rolId) ? true : false;
   }
 
+  async resolved(captchaResponse: string, res) {
+    console.log(`Resolved response token: ${captchaResponse}`);
+  }
+  
   getToken(): String {
     let data = this.getSessionData();
     let currentSession ='';

@@ -1,3 +1,4 @@
+import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -8,13 +9,18 @@ import { PasswordResetComponent } from './password-reset/password-reset.componen
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 
+
 @NgModule({
   declarations: [LoginComponent, LogoutComponent, PasswordResetComponent, ChangePasswordComponent],
   imports: [
     CommonModule,
     SecurityRoutingModule,
     ReactiveFormsModule,
-    FormsModule
-  ]
+    FormsModule,
+    RecaptchaModule,  //this is the recaptcha main module
+    RecaptchaFormsModule, //this is the module for form incase form validation
+  ],
+  entryComponents:[],
+  providers: [ ]
 })
 export class SecurityModule { }

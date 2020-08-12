@@ -165,10 +165,20 @@
                  <option *ngFor="let ciudad of ciudadList" value="{{ciudad.id}}">{{ciudad.Nombre}}</option>
                 </select>
                 <label>Ciudad</label>              
-                
-            </div>
-        
+              </div>
+            
+              <div class="col s12">
+                <!-- 
+                  the SITE_KEY is the sitekey from your admin console.
+                  use form control for validation
+                -->
+                <re-captcha (resolved)="resolved($event)" 
+                            formControlName="recaptchaReactive" 
+                            siteKey="6LdNI74ZAAAAAP5trJFNAFsN-yhWgYEpn4rJbVLr">  
+                </re-captcha>
+              </div>
               
+
             
             </div>
               <div class="row">
@@ -199,6 +209,7 @@
   
   
                 </div>
+                
   
   
         <div class="row">

@@ -1,3 +1,4 @@
+import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -21,7 +22,11 @@ import { PerfilImagesComponent } from './perfil-images/perfil-images.component';
     ReactiveFormsModule,
     FormsModule,
     NgxSpinnerModule,
-    NgxPaginationModule
-  ]
+    NgxPaginationModule,
+    RecaptchaModule,  //this is the recaptcha main module
+    RecaptchaFormsModule, //this is the module for form incase form validation
+  ],
+  entryComponents:[],
+  providers: [ ]
 })
 export class PerfilModule { }

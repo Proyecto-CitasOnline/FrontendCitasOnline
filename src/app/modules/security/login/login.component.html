@@ -32,22 +32,36 @@
               </strong>
           </div>
           </div>
-        </div>
-        <div class="center">
-          <div class="input-field col s12">
-            <button (click)="LoginPerfilFn()" class="btn waves-effect waves-light purple lighten-1" type="button" name="action">Ingresar
-              <i class="material-icons right">send</i>
-            </button>          
+          
+          <div class="col s6 m6">
+            <!-- 
+              the SITE_KEY is the sitekey from your admin console.
+              use form control for validation
+            -->
+            <re-captcha (resolved)="resolved($event)" 
+                        formControlName="recaptchaReactive" 
+                        siteKey="6LdNI74ZAAAAAP5trJFNAFsN-yhWgYEpn4rJbVLr">  
+            </re-captcha>
           </div>
         </div>
+       
         <div class="row">
-          <div class="input-field col s6 m6 l6">
-            <p class="black-text text-lighten-3 "><a routerLink="/perfil/register">¡Registrate ahora!</a></p>
+          <div class="center">
+            <div class="input-field col s12">
+              <button (click)="LoginPerfilFn()" class="btn waves-effect waves-light purple lighten-1" type="button" name="action">Ingresar
+                <i class="material-icons right">send</i>
+              </button>          
+            </div>
           </div>
-          <div class="input-field col s6 m6 l6">
-              <p class="margin right-align #ab47bc "><a routerLink="/security/reset">¿Olvidaste tu contraseña?</a></p>
-          </div>          
         </div>
+            <div class="input-field col s6 m6 l6">
+              <p class="black-text text-lighten-3 "><a routerLink="/perfil/register">¡Registrate ahora!</a></p>
+            </div>
+            <div class="input-field col s6 m6 l6">
+                <p class="margin right-align #ab47bc "><a routerLink="/security/reset">¿Olvidaste tu contraseña?</a></p>
+                      
+          </div>
+        
 
       </form>
     </div>
