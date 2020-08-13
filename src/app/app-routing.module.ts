@@ -1,3 +1,4 @@
+import { UnauthenticatedGuard } from './guards/unauthenticated.guard';
 import { AdminAuthenticatedGuard } from './guards/admin-authenticated.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -25,6 +26,11 @@ const routes: Routes = [
     path:'parameters',
     loadChildren: () => import('./modules/parameters/parameters.module').then(m => m.ParametersModule),
     canActivate: [AdminAuthenticatedGuard]
+  },
+  {
+    path:'informacion',
+    loadChildren: () => import('./modules/informacion/informacion.module').then(m => m.InformacionModule),
+    
   },
   
 

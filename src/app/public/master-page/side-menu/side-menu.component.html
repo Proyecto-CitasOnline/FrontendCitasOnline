@@ -7,12 +7,13 @@
     <a href="#name"><span class="white-text name">John Doe</span></a>
     <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
   </div>
-  <a class="waves-effect" routerLink ="/perfil/list">Editar perfil</a>
+  <a class="waves-effect" routerLink ="/perfil/edition/:id">Editar perfil</a>
 </li>
 
   <li><div class="divider"></div></li>
   <li><a *ngIf = "isLogged && rol == 2" class="subheader">Parametros</a></li>
-  <li><a *ngIf = "isLogged && rol == 2" class="waves-effect" href="/parameters/pais-list">País</a></li>
+  <li><a *ngIf = "isLogged && rol == 2" class="waves-effect" href="/perfil/list">Perfiles</a></li>
+  <li><a *ngIf = "isLogged && rol == 2" class="waves-effect" href="/parameters/pais-list">Paises</a></li>
   <li><a *ngIf = "isLogged && rol == 2" class="waves-effect" href="/parameters/ciudad-list">Ciudades</a></li>
   <li><a *ngIf = "isLogged && rol == 2" class="waves-effect" href="/parameters/estado-civil-list">Estados civiles</a></li>
   <li><a *ngIf = "isLogged && rol == 2" class="waves-effect" href="/parameters/orientacion-list">Orientaciones sexuales</a></li>
