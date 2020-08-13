@@ -9,6 +9,7 @@ import { FooterComponent } from './public/master-page/footer/footer.component';
 import { NavbarComponent } from './public/master-page/navbar/navbar.component';
 import { SideMenuComponent } from './public/master-page/side-menu/side-menu.component';
 import {HttpClientModule} from '@angular/common/http';
+import { PerfilModule } from './modules/perfil/perfil.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,8 @@ import {HttpClientModule} from '@angular/common/http';
     HttpClientModule,
     RecaptchaModule,
     RecaptchaFormsModule,
+    PerfilModule,
+    
 
   ],
   entryComponents:[],

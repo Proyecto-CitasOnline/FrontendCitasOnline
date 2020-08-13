@@ -11,7 +11,7 @@ export class PerfilService {
 
   entity = 'perfil';
   token:String='';
-  filter: String = '?filter={"include":[{"relation":"ciudad"},{"relation":"pais"}]}';
+  filter: String = '?filter={"include":[{"relation":"ciudad"},{"relation":"pais"}, {"relation":"imagenes"}]}';
 
 
 

@@ -1,1 +1,29 @@
-<p>hero works!</p>
+<div *ngIf="!isLogged" class="hero">
+<div class="background">
+<br>
+<img align="left" float:left src="https://mejorconsalud.com/wp-content/uploads/2018/04/tipos-de-parejas-500x334.jpg">
+</div>
+<div align="rigth" class="row">
+    <fieldset>
+        <h4 align ="center" float:right text-align:justify><strong>Bienvenido a Matching </strong></h4>
+        <h4 align ="center" float:right text-align:justify><strong>¡La pagina No 1 de citas en linea!</strong></h4>
+        <h4 align ="center" float:right text-align:justify><strong>¿Que estas esperando?</strong></h4>
+        <div class="row">
+            <div class="center" >
+                <td>
+                    <div class="s6">
+                    <a  routerLink="/perfil/register" routerLinkActive="router-link-active"
+                    class="btn btn-large btn-register waves-effect waves-light purple lighten-1"><i class="material-icons">done</i>Registrate</a>
+                </div>
+                </td>
+             <td>
+                 <div class="s6">
+                <a  routerLink="/security/login" routerLinkActive="router-link-active"
+                class="btn btn-large btn-register waves-effect waves-light purple lighten-1"><i class="material-icons">done</i>Conectate</a>
+            </div>
+            </td>
+            </div>
+        </div>
+    </fieldset>
+</div>
+</div>

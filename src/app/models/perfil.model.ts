@@ -2,6 +2,7 @@ import { UserModel } from "./security/user.model";
 import { CiudadModel } from './parameters/ciudad.model';
 import { PaisModel } from './parameters/pais.model';
 import { PaisService } from '../services/parameters/pais.service';
+import { PerfilImageModel } from './perfil-image.model';
 
 export class PerfilModel{
     id?:String;
@@ -18,6 +19,7 @@ export class PerfilModel{
     ciudad:CiudadModel;
     pais:PaisModel;
     paisId: String;
+    imagenes: PerfilImageModel[];
     hijos?:Boolean;
     fumador?:Boolean;
     bebedor?:Boolean;

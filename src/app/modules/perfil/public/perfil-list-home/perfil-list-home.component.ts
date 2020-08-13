@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PerfilModel } from 'src/app/models/perfil.model';
+import { PerfilService } from 'src/app/services/perfil.service';
 
 @Component({
   selector: 'app-perfil-list-home',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilListHomeComponent implements OnInit {
 
-  constructor() { }
+  perfilList: PerfilModel[];
+
+  constructor(private service: PerfilService) { }
 
   ngOnInit(): void {
+    this.getAllPerfil();
   }
+
+  getAllPerfil(){
+    this.service.getAllRecords().subscribe(
+      data => {
+        this.perfilList = data;
+        console.log(this.perfilList)
+      },
+      err=>{}
+    )
+  }
+
+  
 
 }

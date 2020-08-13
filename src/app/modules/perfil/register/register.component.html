@@ -159,12 +159,11 @@
                 
 
               <div  class="input-field col s6">
-                <i class="material-icons prefix">location_city</i>
-                <select formControlName = "ciudadId">
+                <select class="browser-default" formControlName = "ciudadId">
                   <option value="" disabled selected>Elige una opción</option>
                  <option *ngFor="let ciudad of ciudadList" value="{{ciudad.id}}">{{ciudad.Nombre}}</option>
                 </select>
-                <label>Ciudad</label>              
+                <label class= "active">Ciudad</label>              
               </div>
             
               <div class="col s12">
@@ -210,6 +209,7 @@
   
                 </div>
                 
+                
   
   
         <div class="row">
@@ -221,4 +221,4 @@
         </div>
         </form>
       </div>
-</fieldset> 
+</fieldset>
