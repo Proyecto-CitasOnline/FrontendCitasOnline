@@ -104,95 +104,100 @@
   
             </div> 
           
-          <div class="row">
-            <div  class="input-field col s6">
-              <i class="material-icons prefix">wc</i>
-              <select formControlName = "estadoCivil">
-                <i class="material-icons prefix">favorite_border </i>
-                <option value="" disabled selected>Elige una opción</option>
-                <option selected value="soltero"> Soltero </option>
-               <option selected value="casado">Casado</option>
-                <option selected value="viudo/a">Viudo/a</option>
-                <option selected value="complicado">Complicado</option>
-              </select>
-              <label>Estado civil</label>
-            
-                <div class="warning-validator" *ngIf="fgv.estadoCivil.errors   && (fgv.estadoCivil.dirty || fgv.estadoCivil.touched)">
-                  <strong *ngIf="fgv.estadoCivil.errors.required">
-                    Este campo es requerido.
-                  </strong>
-                </div>  
-              </div>
-          
+            <div class="row">
               <div  class="input-field col s6">
                 <i class="material-icons prefix">wc</i>
-                <select formControlName = "orientacionSexual">
+                <select formControlName = "estadoCivil">
+                  <i class="material-icons prefix">favorite_border </i>
                   <option value="" disabled selected>Elige una opción</option>
-                 <option selected value="heterosexual">Heterosexual</option>
-                  <option value="homosexual"> Homosexual </option>
-                  <option value="bisexual">Bisexual</option>
+                  <option selected value="soltero"> Soltero </option>
+                 <option selected value="casado">Casado</option>
+                  <option selected value="viudo/a">Viudo/a</option>
+                  <option selected value="complicado">Complicado</option>
                 </select>
-                <label>Orientacion sexual</label>
-    
-                <div class="warning-validator" *ngIf="fgv.orientacionSexual.errors   && (fgv.orientacionSexual.dirty || fgv.orientacionSexual.touched)">
-                  <strong *ngIf="fgv.orientacionSexual.errors.required">
-                    Este campo es requerido.
-                  </strong>
-              </div>
-            </div>
-              <div class="input-field col s6">
-                <i class="material-icons prefix">card_travel</i>
-                <input id="ocupacion" type="text" >
-                <label for="ocupacion">Ocupación</label>
-              </div>
+                <label>Estado civil</label>
               
+                  <div class="warning-validator" *ngIf="fgv.estadoCivil.errors   && (fgv.estadoCivil.dirty || fgv.estadoCivil.touched)">
+                    <strong *ngIf="fgv.estadoCivil.errors.required">
+                      Este campo es requerido.
+                    </strong>
+                  </div>  
+                </div>
             
-              <div class="input-field col s6">
-                <i class="material-icons prefix">location_city</i>
-                <select  formControlName="ciudadId">                 
-                   <option *ngFor="let ciudad of ciudadList" value="{{ciudad.id}}">{{ciudad.Nombre}}</option>
-                </select>
-                <label>Ciudad</label>
+                <div  class="input-field col s6">
+                  <i class="material-icons prefix">wc</i>
+                  <select formControlName = "orientacionSexual">
+                    <option value="" disabled selected>Elige una opción</option>
+                   <option selected value="heterosexual">Heterosexual</option>
+                    <option value="homosexual"> Homosexual </option>
+                    <option value="bisexual">Bisexual</option>
+                  </select>
+                  <label>Orientacion sexual</label>
+      
+                  <div class="warning-validator" *ngIf="fgv.orientacionSexual.errors   && (fgv.orientacionSexual.dirty || fgv.orientacionSexual.touched)">
+                    <strong *ngIf="fgv.orientacionSexual.errors.required">
+                      Este campo es requerido.
+                    </strong>
+                </div>
               </div>
-
-              <div class="input-field col s6">
-                <i class="material-icons prefix">location_city</i> 
-                <select  class="browser-default" formControlName="paisId">
-                  <option *ngFor="let pais of paisList" value="{{pais.id}}">{{pais.Nombre}}</option>
-                </select>
-                <label>Pais</label>
-              </div>
-            
-            </div>
-              <div class="row">
-                <div class="input-field col s4">
-                    <p>
-                        <label>
-                          <input type="checkbox" class="hijos" />
-                          <span>¿Tienes hijos?</span>
-                        </label>
-                      </p>
-                    </div>
-                    <div class="input-field col s4">
-                      <p>
-                        <label>
-                          <input type="checkbox" class="fumador"  />
-                          <span>¿Eres fumador?</span>
-                        </label>
-                      </p>
-                    </div>
-                    <div class="input-field col s4">
-                      <p>
-                        <label>
-                          <input type="checkbox" class="bebedor"/>
-                          <span>¿Eres bebedor?</span>
-                        </label>
-                      </p>
-                      </div>
-  
-  
+                <div class="input-field col s6">
+                  <i class="browser-default" class="material-icons prefix">card_travel</i>
+                  <input id="ocupacion" type="text" >
+                  <label for="ocupacion">Ocupación</label>
+                </div>
+                <div class="input-field col s6">
+                  <select  class="browser-default" formControlName="paisId">       
+                    <option value="" disabled selected>Elige un país</option>   
+                    <option *ngFor="let pais of paisList" selected value="{{pais.id}}">{{pais.Nombre}}</option>
+                  </select> 
+                  <label class= "active"> País</label>
                 </div>
   
+              </div>
+  
+                <div class="row">
+                  
+  
+                <div  class="input-field col s6">
+                  <select class="browser-default" formControlName = "ciudadId">
+                    <option value="" disabled selected>Elige una opción</option>
+                   <option *ngFor="let ciudad of ciudadList" value="{{ciudad.id}}">{{ciudad.Nombre}}</option>
+                  </select>
+                  <label class= "active">Ciudad</label>              
+                </div>
+                             
+  
+              
+              </div>
+                <div class="row">
+                  <div class="input-field col s4">
+                      <p>
+                          <label>
+                            <input type="checkbox" class="hijos" />
+                            <span>¿Tienes hijos?</span>
+                          </label>
+                        </p>
+                      </div>
+                      <div class="input-field col s4">
+                        <p>
+                          <label>
+                            <input type="checkbox" class="fumador"  />
+                            <span>¿Eres fumador?</span>
+                          </label>
+                        </p>
+                      </div>
+                      <div class="input-field col s4">
+                        <p>
+                          <label>
+                            <input type="checkbox" class="bebedor"/>
+                            <span>¿Eres bebedor?</span>
+                          </label>
+                        </p>
+                        </div>
+    
+    
+                  </div>
+                
   
         <div class="row">
             <div class="center" >

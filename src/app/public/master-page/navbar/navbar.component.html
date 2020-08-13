@@ -2,9 +2,9 @@
     <div class="nav-wrapper  purple lighten-1">
       <a href="#" class="brand-logo">Matching</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li *ngIf="!isLogged"><a routerLink="informacion/funcionamiento">¿Cómo funciona?</a></li>
         <li *ngIf="!isLogged"><a routerLink="informacion/testimonios">Testimonios</a></li>
-        <li *ngIf="isLogged"><a routerLink="/perfil/list"> Descubrir</a></li>
+        <li *ngIf="!isLogged"><a routerLink="/security/login">Conectate</a></li>
+        <li *ngIf="isLogged"><a routerLink="/home"> Descubrir</a></li>
         <li *ngIf="isLogged"><a routerLink="security/change-password"> Cambiar contraseña</a></li>
         <li *ngIf="isLogged"><a routerLink="security/logout">Cerrar sesion</a></li>
 
