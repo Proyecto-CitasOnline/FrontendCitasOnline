@@ -24,7 +24,7 @@ export class PerfilService {
   }
 
   getRecordById(id: String) : Observable<PerfilModel>{
-    return this.http.get<PerfilModel>(`${ServiceConfig.BASE_URL}${this.entity}/${id}`);
+    return this.http.get<PerfilModel>(`${ServiceConfig.BASE_URL}${this.entity}/${id}${this.filter}`);
     
   }
   
